@@ -1,7 +1,9 @@
-<h1> Clone Overflow </h1>
-<ul id="unstyled"> 
-  <h3>Questions</h3>
-  <% @questions.each do |question| %>
-  <li> <%= link_to question.title, question %> </li>
-  <% end %>
-</ul> 
+<div class="twelve columns text-center"><br />
+  <h1> Clone Overflow </h1>
+  <ul id="unstyled"> 
+    <h3>Questions</h3>
+    <% @questions.each do |question| %>
+    <li> <%= link_to question.title, question %> </li>
+    <% end %>
+  </ul>
+</div>

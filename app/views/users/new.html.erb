@@ -1,0 +1,36 @@
+<% if @user.errors %>
+  <ol>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message  %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<div class="row">
+  <div class="large-12 columns text-center">
+    <h1>Sign Up</h1>
+  </div>
+
+  <%= form_for @user do |f| %>
+  <div class="large-4 small-centered columns">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="large-4 small-centered columns">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="large-4 small-centered columns">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="large-12 columns text-center">
+    <%= f.submit 'Register', class: "button radius" %>
+  </div>
+
+  <% end %>
+
+</div>

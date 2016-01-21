@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:create]
+  resources :users, only: [:new, :create]
 
   resources :questions
 
@@ -14,14 +14,13 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:destory, :new, :create]
 
-  resources :users, only: [:new, :create]
-
+  get 'signup' => 'users#new', as: :signup
   get 'logout' => 'sessions#destroy', as: :logout
   get 'login' => 'sessions#new', as: :login
 
   root 'questions#index'
 
-  get 'questions/:id/answers' => 'questions#answers'
+  get 'questions/:id/answers' => 'questions#answers', as: :question_answers
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

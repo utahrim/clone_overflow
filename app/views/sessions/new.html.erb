@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="large-12 columns text-center">
+    <h1>Log In</h1>
+  </div>
+
+  <%= form_tag sessions_path do |f| %>
+  <div class="large-4 small-centered columns">
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+  </div>
+
+  <div class="large-4 small-centered columns">
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+
+  <div class="large-12 columns text-center">
+    <%= submit_tag 'Log In', class: "button radius" %>
+  </div>
+
+  <% end %>
+
+</div>
